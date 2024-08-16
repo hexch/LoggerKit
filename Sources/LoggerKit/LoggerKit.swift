@@ -10,19 +10,16 @@ import os
 fileprivate let kBundleID = Bundle.main.bundleIdentifier!
 fileprivate let kTagColMax = 8
 
-public enum Log:String{
-    case base
-    
-    // UI >>
-    // add ui log tag here
-    // << UI
+public protocol Log {
+    var category:String { get }
+    func debug(_ tag: String, _ msg: String)
+    func info(_ tag: String, _ msg: String)
+    func error(_ tag: String, _ msg: String)
 }
 
 @available(iOS 14.0, *)
 public extension Log{
-    var category:String {
-        self.rawValue
-    }
+    
     var logger: Logger{
         Logger(subsystem: kBundleID, category: self.category)
     }
