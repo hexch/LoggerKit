@@ -10,6 +10,8 @@ import os
 fileprivate let kBundleID = Bundle.main.bundleIdentifier!
 fileprivate let kTagColMax = 8
 
+@available(macOS 11.0, *)
+@available(iOS 14.0, *)
 public protocol Log {
     var category:String { get }
     func debug(_ tag: String, _ msg: String)
@@ -17,6 +19,7 @@ public protocol Log {
     func error(_ tag: String, _ msg: String)
 }
 
+@available(macOS 11.0, *)
 @available(iOS 14.0, *)
 public extension Log{
     
