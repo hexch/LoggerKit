@@ -23,8 +23,8 @@ public protocol Log {
 @available(iOS 14.0, *)
 public extension Log{
     
-    var logger: Logger{
-        Logger(subsystem: kBundleID, category: self.category)
+    var logger: os.Logger{
+        os.Logger(subsystem: kBundleID, category: self.category)
     }
     func debug(_ tag: String, _ msg: String){
         #if DEBUG
