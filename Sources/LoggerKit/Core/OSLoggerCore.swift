@@ -32,7 +32,7 @@ public final class OSLoggerCore: LoggerCore {
         
 #if DEBUG
         let fullMessage = "\(message) in \(metadata?["function"] ?? "") at \(metadata?["file"] ?? ""):\(metadata?["line"] ?? "")"
-        logger.log(level: osLogType, "\(fullMessage)")
+        logger.log(level: osLogType, "\(fullMessage, privacy: .public)")
 #else
         if level > .debug {
             logger.log(level: osLogType, "\(message)")
