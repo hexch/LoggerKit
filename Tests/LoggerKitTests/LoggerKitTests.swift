@@ -1,3 +1,3 @@
-import Testing
-@testable import LoggerKit
 import Foundation
+@testable import LoggerKit
+import Testing

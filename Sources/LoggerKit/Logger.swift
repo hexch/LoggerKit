@@ -6,10 +6,11 @@
 //
 
 import Foundation
+
 public final class Logger: LoggerProtocol, Sendable {
     let core: LoggerCore
     let queue: DispatchQueue
-    
+
     public init(
         core: LoggerCore,
         qos: DispatchQoS = .utility
@@ -17,7 +18,7 @@ public final class Logger: LoggerProtocol, Sendable {
         self.core = core
         queue = DispatchQueue(label: core.subsystem, qos: qos)
     }
-    
+
     public func log(
         _ message: String,
         level: LogLevel = .debug,

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 public protocol LoggerProtocol {
     func log(
         _ message: String,
@@ -16,18 +17,20 @@ public protocol LoggerProtocol {
     )
 }
 
-extension LoggerProtocol {
-    public func debug(_ message: String, file: String = #file, function: String = #function, line: Int = #line) {
+public extension LoggerProtocol {
+    func debug(_ message: String, file: String = #file, function: String = #function, line: Int = #line) {
         log(message, level: .debug, file: file, function: function, line: line)
     }
-    public func info(_ message: String, file: String = #file, function: String = #function, line: Int = #line) {
+
+    func info(_ message: String, file: String = #file, function: String = #function, line: Int = #line) {
         log(message, level: .info, file: file, function: function, line: line)
     }
-    public func warning(_ message: String, file: String = #file, function: String = #function, line: Int = #line) {
+
+    func warning(_ message: String, file: String = #file, function: String = #function, line: Int = #line) {
         log(message, level: .warning, file: file, function: function, line: line)
     }
-    
-    public func error(_ message: String, file: String = #file, function: String = #function, line: Int = #line) {
+
+    func error(_ message: String, file: String = #file, function: String = #function, line: Int = #line) {
         log(message, level: .error, file: file, function: function, line: line)
     }
 }
