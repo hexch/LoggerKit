@@ -19,7 +19,7 @@ let package = Package(
         .target(
             name: "LoggerKit",
             swiftSettings: [
-                .unsafeFlags(["-enable-library-evolution"])
+                .swiftLanguageMode(.v6),
             ]
         ),
         .testTarget(
