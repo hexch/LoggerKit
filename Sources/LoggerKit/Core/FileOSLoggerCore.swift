@@ -46,7 +46,6 @@ public final class FileOSLoggerCore: LoggerCore {
             }
         #endif
 
-        guard let fileUrl else { return }
         let timestamp = ISO8601DateFormatter().string(from: Date())
         let logLine = "[\(timestamp)][\(subsystem)][\(category)] [\(level.rawValue.uppercased())] \(message)\n"
         let logLineData = base64On ? logLine.data(using: .utf8)?.base64EncodedData() : logLine.data(using: .utf8)
